@@ -1,0 +1,218 @@
+/* ============================================================
+   admin.css - Admin dashboard styles (Chapter 5: tables)
+   ============================================================ */
+
+body.admin-body {
+    background-color: #f5f5f3;
+}
+
+/* ---- Admin header ---- */
+.admin-header {
+    background-color: var(--color-text);
+    color: #fff;
+    padding: var(--space-sm) 0;
+}
+.admin-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-header .logo { font-family: var(--font-serif); font-size: 1.2rem; }
+.admin-header .logo span { color: var(--color-accent); }
+.admin-header .user-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 0.9rem;
+}
+
+/* ---- Admin layout: sidebar + main ---- */
+.admin-layout {
+    display: flex;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    min-height: calc(100vh - 120px);
+}
+
+/* ---- Sidebar navigation ---- */
+.admin-sidebar {
+    width: 240px;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    padding: var(--space-sm) 0;
+    flex-shrink: 0;
+}
+.admin-sidebar h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-muted);
+    padding: var(--space-sm) var(--space-md);
+    margin: 0;
+}
+.admin-sidebar ul { list-style: none; }
+.admin-sidebar a {
+    display: block;
+    padding: 0.8rem var(--space-md);
+    color: var(--color-text);
+    font-size: 0.9rem;
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+.admin-sidebar a:hover {
+    background: var(--color-bg);
+    border-left-color: var(--color-accent);
+    color: var(--color-accent-d);
+}
+.admin-sidebar a.active {
+    background: var(--color-bg);
+    border-left-color: var(--color-accent);
+    font-weight: 600;
+    color: var(--color-accent-d);
+}
+
+/* ---- Admin main content ---- */
+.admin-main {
+    flex: 1;
+    padding: var(--space-md);
+    overflow-x: auto;
+}
+.admin-main h1 {
+    font-size: 1.6rem;
+    margin-bottom: var(--space-md);
+}
+
+/* ---- Dashboard stat cards (Chapter 8: counters via JS) ---- */
+.stat-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+.stat-card {
+    flex: 1 1 180px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+.stat-card .stat-number {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    color: var(--color-accent-d);
+    line-height: 1;
+}
+.stat-card .stat-label {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+}
+
+/* ---- Admin data table (Chapter 5: tables) ---- */
+.admin-table-wrap {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow-x: auto;
+}
+table.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+table.admin-table th {
+    background-color: #f0f0f0;
+    text-align: left;
+    padding: 0.8rem var(--space-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--color-muted);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+}
+table.admin-table td {
+    padding: 0.8rem var(--space-sm);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+/* Zebra striping (Chapter 4: nth-child) */
+table.admin-table tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+/* Hover highlight */
+table.admin-table tbody tr:hover {
+    background-color: #f5f0e8;
+}
+table.admin-table .thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+table.admin-table .actions {
+    display: flex;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+table.admin-table .role-badge {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+table.admin-table .role-badge.admin {
+    background: var(--color-accent);
+    color: #fff;
+}
+table.admin-table .role-badge.user {
+    background: var(--color-border);
+    color: var(--color-text);
+}
+
+/* ---- Table header row (add button) ---- */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-sm);
+}
+
+/* ---- Back link ---- */
+.back-link {
+    display: inline-block;
+    margin-bottom: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+.back-link:hover { color: var(--color-accent-d); }
+
+/* ---- Admin form ---- */
+.admin-form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    max-width: 700px;
+}
+
+/* ---- File upload area ---- */
+.upload-preview {
+    margin-top: var(--space-sm);
+    text-align: center;
+}
+.upload-preview img {
+    max-height: 200px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}

@@ -1,0 +1,142 @@
+/* ============================================================
+   forms.css - Form styling (Chapter 5: HTML Tables & Forms)
+   ============================================================ */
+
+/* ---- Auth card (login/register) ---- */
+.auth-card {
+    max-width: 460px;
+    margin: var(--space-lg) auto;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-lg) var(--space-md);
+    box-shadow: var(--shadow);
+}
+.auth-card h1 {
+    text-align: center;
+    margin-bottom: var(--space-xs);
+}
+.auth-card .subtitle {
+    text-align: center;
+    color: var(--color-muted);
+    margin-bottom: var(--space-md);
+}
+
+/* ---- Form groups ---- */
+.form-group {
+    margin-bottom: var(--space-sm);
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    font-family: var(--font-sans);
+    background: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(197, 165, 114, 0.15);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-group .hint {
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    margin-top: 0.3rem;
+}
+.form-group .error {
+    font-size: 0.85rem;
+    color: var(--color-danger);
+    margin-top: 0.3rem;
+}
+
+/* ---- Checkbox group ---- */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: var(--space-sm);
+}
+.form-check input[type="checkbox"] {
+    width: auto;
+    cursor: pointer;
+}
+
+/* ---- Form actions ---- */
+.form-actions {
+    display: flex;
+    gap: var(--space-sm);
+    align-items: center;
+    margin-top: var(--space-md);
+}
+.form-actions .btn { flex: 1; }
+
+/* ---- Auth switch link ---- */
+.auth-switch {
+    text-align: center;
+    margin-top: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+/* ---- Fieldset/legend (Chapter 5: accessible forms) ---- */
+fieldset {
+    border: none;
+    padding: 0;
+}
+legend {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin-bottom: var(--space-sm);
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--color-accent);
+    width: 100%;
+}
+
+/* ---- Star rating input (review form) ---- */
+.rating-input {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    gap: 0.2rem;
+}
+.rating-input input { display: none; }
+.rating-input label {
+    font-size: 1.8rem;
+    color: var(--color-border);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.rating-input label:hover,
+.rating-input label:hover ~ label,
+.rating-input input:checked ~ label {
+    color: var(--color-accent);
+}
+
+/* ---- Horizontal form (admin) ---- */
+.form-horizontal {
+    max-width: 700px;
+}
+.form-horizontal .row {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+}
+.form-horizontal .row .form-group { flex: 1 1 200px; }

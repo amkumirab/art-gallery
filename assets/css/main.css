@@ -1,0 +1,273 @@
+/* ============================================================
+   main.css - Global styles (Chapter 4: CSS Fundamentals)
+   Minimalist / Elegant design system
+   ============================================================ */
+
+/* ---- CSS custom properties (design tokens) ---- */
+:root {
+    /* Color palette */
+    --color-bg:       #fafaf8;   /* off-white background */
+    --color-surface:  #ffffff;   /* cards / panels */
+    --color-text:     #2c2c2c;   /* charcoal */
+    --color-muted:    #6b6b6b;   /* secondary text */
+    --color-accent:   #c5a572;   /* gold */
+    --color-accent-d: #a8895c;   /* darker gold */
+    --color-border:   #e8e8e8;   /* light gray borders */
+    --color-danger:   #c0392b;
+    --color-success:  #27ae60;
+
+    /* Typography */
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+    /* Spacing scale */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+
+    /* Sizing */
+    --max-width: 1200px;
+    --radius:    4px;
+    --shadow:    0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Reset (Chapter 4: box model) ---- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   /* padding included in width */
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---- Typography hierarchy ---- */
+h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    line-height: 1.25;
+    margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2.5rem; letter-spacing: -0.5px; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+p { margin-bottom: var(--space-sm); }
+
+a {
+    color: var(--color-accent-d);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+a:hover { color: var(--color-accent); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ---- Layout helpers ---- */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+.main-content {
+    flex: 1 0 auto;     /* pushes footer down */
+    padding: var(--space-lg) 0;
+}
+
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-muted); }
+
+/* ---- Page header (Chapter 3: semantic <header>) ---- */
+.site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow);
+}
+
+.site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.site-logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--color-text);
+    letter-spacing: 1px;
+}
+.site-logo span { color: var(--color-accent); }
+
+/* ---- Main navigation (Chapter 3: semantic <nav>) ---- */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.main-nav a {
+    color: var(--color-text);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-accent-d);
+    border-bottom-color: var(--color-accent);
+}
+
+/* ---- Buttons (Chapter 4: pseudo-classes, transitions) ---- */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.8rem;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--color-accent-d);
+}
+
+.btn:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--color-accent-d);
+    color: #fff;
+}
+
+.btn-danger {
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+}
+.btn-danger:hover {
+    background-color: var(--color-danger);
+    color: #fff;
+}
+
+.btn-sm { padding: 0.4rem 1rem; font-size: 0.8rem; }
+
+/* ---- Footer (Chapter 3: semantic <footer>) ---- */
+.site-footer {
+    background-color: var(--color-text);
+    color: #ccc;
+    padding: var(--space-md) 0;
+    margin-top: var(--space-xl);
+    flex-shrink: 0;
+}
+.site-footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+}
+.site-footer a { color: var(--color-accent); }
+.site-footer p { font-size: 0.9rem; margin: 0; }
+
+/* ---- Flash messages ---- */
+.flash {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-md);
+    border-left: 4px solid;
+}
+.flash-success { background: #eafaf1; border-color: var(--color-success); color: #1e7e34; }
+.flash-error   { background: #fdecea; border-color: var(--color-danger);  color: #a94442; }
+.flash-info    { background: #e8f4fd; border-color: #2196f3;              color: #0d6efd; }
+
+/* ---- Empty state ---- */
+.empty-state {
+    text-align: center;
+    padding: var(--space-xl) var(--space-md);
+    color: var(--color-muted);
+}
+.empty-state h3 { color: var(--color-text); }
+
+/* ---- Hero banner (Chapter 7: positioning, filters) ---- */
+.hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0l30 30-30 30L0 30z' fill='%23c5a572' fill-opacity='0.05'/%3E%3C/svg%3E");
+}
+.hero-content { position: relative; z-index: 1; padding: var(--space-md); }
+.hero h1 { font-size: 3rem; margin-bottom: var(--space-sm); }
+.hero p  { font-size: 1.2rem; color: #ddd; margin-bottom: var(--space-md); }
+.hero .btn { border-color: var(--color-accent); color: #fff; }
+.hero .btn:hover { background-color: var(--color-accent); }
+
+/* ---- Section titles ---- */
+.section-title {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+.section-title h2 {
+    display: inline-block;
+    position: relative;
+    padding-bottom: var(--space-xs);
+}
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background-color: var(--color-accent);
+}
+
+/* ---- Utility ---- */
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mb-md { margin-bottom: var(--space-md); }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }

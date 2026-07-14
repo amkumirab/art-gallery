@@ -489,13 +489,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Student ID: 559219
 - University: University of Messina, Sicily, Italy
 - Course: Web Programming Final Project
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@amkumirab](https://github.com/amkumirab)
+- Email: amiralimirabzadeh@gmail.com
 
 ---
 
 ## 🙏 Acknowledgments
 
-- Course Instructor: [Professor Name]
+- Course Instructor: Prof. Armando Ruggeri
 - University of Messina - Web Programming Course
 - Inspiration from modern art gallery websites
 - Security best practices from OWASP
@@ -505,9 +506,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For issues, questions, or suggestions:
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/aurelia-art-gallery/issues)
-- **Email**: your.email@example.com
-- **Discussion**: [GitHub Discussions](https://github.com/yourusername/aurelia-art-gallery/discussions)
+- **GitHub Issues**: [Create an issue](https://github.com/amkumirab/aurelia-art-gallery/issues)
+- **Email**: amiralimirabzadeh@gmail.com
+- **GitHub Profile**: [@amkumirab](https://github.com/amkumirab)
+- **Discussion**: [GitHub Discussions](https://github.com/amkumirab/aurelia-art-gallery/discussions)
 
 ---
 

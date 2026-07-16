@@ -143,6 +143,8 @@ http://localhost/aurelia-art-gallery/index.php
 
 ---
 
+
+
 ## 📁 Project Structure
 
 ```
